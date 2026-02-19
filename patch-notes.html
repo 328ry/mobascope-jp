@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>パッチノート要約 | MobaScope JP</title>
+    <meta
+      name="description"
+      content="モバレのパッチノートを日本向けに要約。バフ・ナーフ・システム変更をロール別に整理して、実戦への影響を素早く確認できます。"
+    />
+    <meta property="og:image" content="images/ogp.webp" />
+    <meta property="og:title" content="パッチノート要約 | MobaScope JP" />
+    <meta property="og:description" content="ロール別で読むモバレ最新パッチ" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="images/ogp.webp" />
+    <link rel="canonical" href="patch-notes.html" />
+    <link rel="icon" href="images/favicon.webp" type="image/webp" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="with-sidebar">
+    <header class="nav scrolled" data-locked="true">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark"><img src="images/favicon.webp" alt="MobaScopeロゴ" /></span>
+          <span>MobaScope JP</span>
+        </a>
+        <button class="menu-btn" type="button" aria-label="メニュー" aria-expanded="false">☰</button>
+        <nav class="nav-links" aria-label="グローバルナビゲーション">
+          <a href="index.html">トップ</a>
+          <a href="about.html">サイト概要</a>
+          <a class="active" href="patch-notes.html">パッチノート</a>
+          <a href="mpl.html">MPL</a>
+          <a href="news.html">ニュース</a>
+          <a href="company.html">運営情報</a>
+          <a href="contact.html">お問い合わせ</a>
+        </nav>
+        <div class="nav-promo">
+          <p>毎日 7:30 更新
+          <br>ニュース / パッチ / MPL を日本向けに要約</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <div class="container fade-in">
+          <h1>パッチノート要約</h1>
+          <p>変更点を「誰に影響するか」で整理。試合前3分でチェックできます。</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <article class="card fade-in" style="overflow: hidden">
+            <img src="images/feature-patch.webp" alt="パッチノート分析のイメージ" style="max-height: 360px; width: 100%; object-fit: cover" />
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="tag patch">CURRENT VERSION</span>
+                <span>v1.9.42 / 2026-02-18</span>
+              </div>
+              <h3 style="font-size: 1.35rem">今週の結論: 序盤オブジェクト管理がさらに重要</h3>
+              <p>
+                ジャングル経験値とローム装備の調整で、5分までのテンポ差が勝敗に直結。
+                マクロ重視編成が通りやすく、瞬間火力だけに寄せたドラフトは後半に失速しやすい環境です。
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" data-filter-group>
+        <div class="container fade-in">
+          <h2 class="section-title">
+            CHANGE LIST
+            <span class="jp">変更点一覧</span>
+          </h2>
+          <div class="filters">
+            <button class="filter-btn active" type="button" data-filter="all">すべて</button>
+            <button class="filter-btn" type="button" data-filter="buff">バフ</button>
+            <button class="filter-btn" type="button" data-filter="nerf">ナーフ</button>
+            <button class="filter-btn" type="button" data-filter="system">システム</button>
+          </div>
+
+          <div class="card-list">
+            <article class="card" data-category="buff">
+              <div class="card-body">
+                <div class="card-meta"><span class="tag patch">BUFF</span></div>
+                <h3>ハヤブサ</h3>
+                <p>影スキルの復帰速度が向上。中盤のピックオフ性能が上がりました。</p>
+              </div>
+            </article>
+            <article class="card" data-category="nerf">
+              <div class="card-body">
+                <div class="card-meta"><span class="tag patch">NERF</span></div>
+                <h3>ノーラン</h3>
+                <p>アルティメットの基礎ダメージ減少。単独キル性能が一段落。</p>
+              </div>
+            </article>
+            <article class="card" data-category="system">
+              <div class="card-body">
+                <div class="card-meta"><span class="tag patch">SYSTEM</span></div>
+                <h3>ローム装備</h3>
+                <p>経験値分配の閾値調整。序盤のレベル差管理がよりシビアに。</p>
+              </div>
+            </article>
+            <article class="card" data-category="buff">
+              <div class="card-body">
+                <div class="card-meta"><span class="tag patch">BUFF</span></div>
+                <h3>セシリオン</h3>
+                <p>スタック効率上昇で15分以降の集団戦火力が伸びる調整。</p>
+              </div>
+            </article>
+            <article class="card" data-category="nerf">
+              <div class="card-body">
+                <div class="card-meta"><span class="tag patch">NERF</span></div>
+                <h3>マチルダ</h3>
+                <p>移動支援スキルの再使用時間増加。ローテ速度が落ちました。</p>
+              </div>
+            </article>
+            <article class="card" data-category="system">
+              <div class="card-body">
+                <div class="card-meta"><span class="tag patch">SYSTEM</span></div>
+                <h3>ロード出現仕様</h3>
+                <p>2回目ロードの耐久増加。前線管理の精度がより重要です。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container fade-in">
+          <h2 class="section-title">
+            ROLE IMPACT
+            <span class="jp">ロール別影響</span>
+          </h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ロール</th>
+                  <th>影響度</th>
+                  <th>今週の注目ポイント</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>EXP</td>
+                  <td>中</td>
+                  <td>序盤1v1より集団戦参加の早さが勝率を左右</td>
+                </tr>
+                <tr>
+                  <td>Jungle</td>
+                  <td>高</td>
+                  <td>5分前のファーム効率とタートル判断が最重要</td>
+                </tr>
+                <tr>
+                  <td>Mid</td>
+                  <td>中</td>
+                  <td>ローテと視界サポートで差がつく環境</td>
+                </tr>
+                <tr>
+                  <td>Gold</td>
+                  <td>中</td>
+                  <td>安全なレーン管理で後半キャリーを狙う構成が有効</td>
+                </tr>
+                <tr>
+                  <td>Roam</td>
+                  <td>高</td>
+                  <td>経験値分配変更で序盤の位置取り難度が上昇</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <p><strong>MobaScope JP</strong></p>
+          <p>モバレの最新情報を、日本向けに編集して届ける情報ハブ。</p>
+        </div>
+        <ul>
+          <li><a href="news.html">最新ニュース</a></li>
+          <li><a href="patch-notes.html">パッチノート</a></li>
+          <li><a href="mpl.html">MPL情報</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="common.js"></script>
+  </body>
+</html>

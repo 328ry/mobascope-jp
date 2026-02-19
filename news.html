@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ニュース一覧 | MobaScope JP</title>
+    <meta
+      name="description"
+      content="モバレの最新ニュースをカテゴリ別に一覧化。公式発表、イベント、アップデート情報を日本語で追えるニュースページ。"
+    />
+    <meta property="og:image" content="images/ogp.webp" />
+    <meta property="og:title" content="ニュース一覧 | MobaScope JP" />
+    <meta property="og:description" content="モバレ最新ニュースをカテゴリ別に整理" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="images/ogp.webp" />
+    <link rel="canonical" href="news.html" />
+    <link rel="icon" href="images/favicon.webp" type="image/webp" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="with-sidebar">
+    <header class="nav scrolled" data-locked="true">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark"><img src="images/favicon.webp" alt="MobaScopeロゴ" /></span>
+          <span>MobaScope JP</span>
+        </a>
+        <button class="menu-btn" type="button" aria-label="メニュー" aria-expanded="false">☰</button>
+        <nav class="nav-links" aria-label="グローバルナビゲーション">
+          <a href="index.html">トップ</a>
+          <a href="about.html">サイト概要</a>
+          <a href="patch-notes.html">パッチノート</a>
+          <a href="mpl.html">MPL</a>
+          <a class="active" href="news.html">ニュース</a>
+          <a href="company.html">運営情報</a>
+          <a href="contact.html">お問い合わせ</a>
+        </nav>
+        <div class="nav-promo">
+          <p>毎日 7:30 更新
+          <br>ニュース / パッチ / MPL を日本向けに要約</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <div class="container fade-in">
+          <h1>ニュース一覧</h1>
+          <p>カテゴリで絞り込みながら、いま追うべき情報をすぐ見つけられます。</p>
+        </div>
+      </section>
+
+      <section class="section" data-filter-group>
+        <div class="container fade-in">
+          <h2 class="section-title">
+            LATEST FEED
+            <span class="jp">最新更新</span>
+          </h2>
+
+          <div class="filters">
+            <button class="filter-btn active" type="button" data-filter="all">すべて</button>
+            <button class="filter-btn" type="button" data-filter="news">ニュース</button>
+            <button class="filter-btn" type="button" data-filter="patch">パッチ</button>
+            <button class="filter-btn" type="button" data-filter="mpl">MPL</button>
+          </div>
+
+          <div class="card-list" data-news-list>
+            <article class="card" data-category="news" data-page="1">
+              <div class="card-body">
+                <div class="card-meta"><span class="tag news">NEWS</span><span>2026-02-19</span></div>
+                <h3>新イベント「Arcane Frontier」開催日程を公開</h3>
+                <p>報酬内容と終了日を日本時間で追記。取りこぼし防止用のチェックポイント付き。</p>
+              </div>
+            </article>
+            <article class="card" data-category="patch" data-page="1">
+              <div class="card-body">
+                <div class="card-meta"><span class="tag patch">PATCH</span><span>2026-02-18</span></div>
+                <h3>v1.9.42 バランス調整をロール別に更新</h3>
+                <p>バフ6件、ナーフ5件、システム変更2件をプレイ影響順に整理。</p>
+              </div>
+            </article>
+            <article class="card" data-category="mpl" data-page="1">
+              <div class="card-body">
+                <div class="card-meta"><span class="tag mpl">MPL</span><span>2026-02-18</span></div>
+                <h3>MPL Week 3 Day 2の対戦カード速報</h3>
+                <p>日本時間スケジュールと注目選手、先週比較のポイントを追加。</p>
+              </div>
+            </article>
+            <article class="card" data-category="news" data-page="1">
+              <div class="card-body">
+                <div class="card-meta"><span class="tag news">NEWS</span><span>2026-02-17</span></div>
+                <h3>新スキンライン発表、販売期間を一覧化</h3>
+                <p>販売開始と終了、同時開催イベントを一画面で確認できる表を追加。</p>
+              </div>
+            </article>
+            <article class="card" data-category="mpl" data-page="1">
+              <div class="card-body">
+                <div class="card-meta"><span class="tag mpl">MPL</span><span>2026-02-17</span></div>
+                <h3>Week 2終了時点の順位と勝率データ更新</h3>
+                <p>チーム別の先攻勝率と平均試合時間を掲載し、傾向を解説。</p>
+              </div>
+            </article>
+            <article class="card" data-category="patch" data-page="1">
+              <div class="card-body">
+                <div class="card-meta"><span class="tag patch">PATCH</span><span>2026-02-16</span></div>
+                <h3>テストサーバー調整案を比較表で予告</h3>
+                <p>正式反映前の注意点として、採用確度と影響範囲を明示しました。</p>
+              </div>
+            </article>
+            <article class="card hidden-item" data-category="news" data-page="2">
+              <div class="card-body">
+                <div class="card-meta"><span class="tag news">NEWS</span><span>2026-02-15</span></div>
+                <h3>ランクイベントの報酬条件が一部変更</h3>
+                <p>デイリー消化で迷いやすい条件を図解付きで更新しました。</p>
+              </div>
+            </article>
+            <article class="card hidden-item" data-category="mpl" data-page="2">
+              <div class="card-body">
+                <div class="card-meta"><span class="tag mpl">MPL</span><span>2026-02-14</span></div>
+                <h3>実況解説が挙げた注目ドラフト3選</h3>
+                <p>ピック順と勝率を組み合わせて再現しやすい形で紹介しています。</p>
+              </div>
+            </article>
+            <article class="card hidden-item" data-category="patch" data-page="2">
+              <div class="card-body">
+                <div class="card-meta"><span class="tag patch">PATCH</span><span>2026-02-13</span></div>
+                <h3>前バージョン比較: 伸びたヒーローと落ちたヒーロー</h3>
+                <p>直近7日でピック率が変化したヒーローを一覧で追えるようにしました。</p>
+              </div>
+            </article>
+          </div>
+
+          <p style="margin-top: 18px">
+            <button class="btn-outline" type="button" data-load-more>さらに表示</button>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <p><strong>MobaScope JP</strong></p>
+          <p>モバレの最新情報を、日本向けに編集して届ける情報ハブ。</p>
+        </div>
+        <ul>
+          <li><a href="news.html">最新ニュース</a></li>
+          <li><a href="patch-notes.html">パッチノート</a></li>
+          <li><a href="mpl.html">MPL情報</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="common.js"></script>
+  </body>
+</html>
