@@ -44,8 +44,11 @@
       </div>
     </header>
 
+    <div class="scroll-progress" aria-hidden="true"><span class="scroll-progress-bar"></span></div>
+    <aside class="trail-nav" aria-label="ページ進行ガイド"></aside>
+
     <main>
-      <section class="container section" style="padding-top: 18px">
+      <section id="hero" class="container section" data-trail-section data-trail-label="トップ">
         <div class="home-kv">
           <article class="kv-card fade-in">
             <a href="patch-notes.html">
@@ -54,14 +57,14 @@
                 <span class="kv-badge">最新更新</span>
               </div>
               <div class="kv-content">
-                <h1 class="kv-title">ここだけ見れば、<br />モバレの今が追える。</h1>
+                <h1 class="kv-title">スクロールするだけで、<br />モバレの今を掴める。</h1>
                 <p class="kv-copy">
-                  朝の3分で、その日の判断材料が揃う。
-                  速報は60秒、深掘りは3分で読める構成にし、ランクと観戦の両方で使える情報だけを残しています。
+                  速報は短く、深掘りはしっかり。読み進めるほど「次に見るべき情報」が自然につながる設計にしています。
+                  迷わず、止まらず、今日の判断まで一直線でたどり着けます。
                 </p>
                 <div class="cta-row">
-                  <span class="btn">最新ニュースを見る</span>
-                  <span class="btn-outline">今週のパッチを見る</span>
+                  <span class="btn">最新ニュースへ</span>
+                  <span class="btn-outline">今週のパッチへ</span>
                 </div>
               </div>
             </a>
@@ -75,7 +78,7 @@
                 </div>
                 <div class="kv-content">
                   <h3>MPL Week 3 の注目カード</h3>
-                  <p>日本時間で観戦スケジュールを更新</p>
+                  <p>観戦前に押さえる論点を更新</p>
                 </div>
               </a>
             </article>
@@ -86,7 +89,7 @@
                 </div>
                 <div class="kv-content">
                   <h3>v1.9.42 変更点まとめ</h3>
-                  <p>ロール別影響を3分で把握</p>
+                  <p>勝率に効く順で再整理</p>
                 </div>
               </a>
             </article>
@@ -123,15 +126,66 @@
         </section>
       </section>
 
-      <section class="section">
+      <section id="lane" class="section" data-trail-section data-trail-label="流し読み">
+        <div class="container fade-in">
+          <h2 class="section-title">
+            SCROLL LANE
+            <span class="jp">横に流して直感で探す</span>
+          </h2>
+          <p class="lead">ホイールで横に流せます。気になる話題から先に拾ってOKです。</p>
+          <div class="story-lane" aria-label="注目トピックレーン">
+            <a class="lane-card" href="news.html">
+              <img src="images/news-desk.webp" alt="ニュース更新" />
+              <div class="lane-card-body">
+                <small>NEWS FAST</small>
+                <strong>1分で読める速報まとめ</strong>
+                <p>更新直後に結論だけ先取り</p>
+              </div>
+            </a>
+            <a class="lane-card" href="patch-notes.html">
+              <img src="images/patch-ui.webp" alt="パッチ分析" />
+              <div class="lane-card-body">
+                <small>PATCH IMPACT</small>
+                <strong>勝率に効く順の変更点</strong>
+                <p>ロール別に即判断できる構成</p>
+              </div>
+            </a>
+            <a class="lane-card" href="mpl.html">
+              <img src="images/mpl-players.webp" alt="MPL注目選手" />
+              <div class="lane-card-body">
+                <small>MPL WATCH</small>
+                <strong>試合前に見るべき3ポイント</strong>
+                <p>観戦の見どころを先に提示</p>
+              </div>
+            </a>
+            <a class="lane-card" href="about.html">
+              <img src="images/about-team.webp" alt="編集体制" />
+              <div class="lane-card-body">
+                <small>EDITORIAL</small>
+                <strong>編集方針と情報ソース基準</strong>
+                <p>なぜ信頼できるかを公開</p>
+              </div>
+            </a>
+            <a class="lane-card" href="company.html">
+              <img src="images/feature-update.webp" alt="運営情報" />
+              <div class="lane-card-body">
+                <small>TEAM</small>
+                <strong>運営体制と更新プロセス</strong>
+                <p>透明性を担保する運用</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="deep" class="section" data-trail-section data-trail-label="深掘り">
         <div class="container feature-stack">
           <article class="feature-block fade-in">
             <img src="images/news-desk.webp" alt="ニュース更新のイメージ" />
             <div class="feature-copy">
               <h3>ニュースは「判断に必要な順」</h3>
               <p>
-                更新が来たら、結論→影響→やることの順で提示。
-                長文を追わなくても「今日どう動くべきか」をすぐ決められます。
+                更新が来たら、結論→影響→やることの順で提示。長文を追わなくても「今日どう動くべきか」をすぐ決められます。
               </p>
               <p style="margin-top: 14px"><a class="btn-outline" href="news.html">ニュース一覧へ</a></p>
             </div>
@@ -142,8 +196,7 @@
             <div class="feature-copy">
               <h3>パッチは「勝率に効く順」で分解</h3>
               <p>
-                数字の並びだけで終わらせず、「どのロールの勝ち筋が太くなるか」まで翻訳。
-                ピックとビルドの判断に直結する形でまとめています。
+                数字の並びだけで終わらせず、「どのロールの勝ち筋が変わるか」まで翻訳。ピックとビルドの判断に直結する形でまとめています。
               </p>
               <p style="margin-top: 14px"><a class="btn-outline" href="patch-notes.html">パッチノートへ</a></p>
             </div>
@@ -151,34 +204,17 @@
         </div>
       </section>
 
-      <section class="section">
+      <section id="jump" class="section" data-trail-section data-trail-label="回遊">
         <div class="container fade-in">
           <h2 class="section-title">
-            PICK UP
-            <span class="jp">いま読むべき3本</span>
+            NEXT JUMP
+            <span class="jp">次に読むべきページ</span>
           </h2>
-          <div class="card-list">
-            <article class="card">
-              <div class="card-body">
-                <div class="card-meta"><span class="tag news">NEWS</span><span>2026-02-19</span></div>
-                <h3>新イベント「Arcane Frontier」開催情報</h3>
-                <p>開始時刻、終了日、報酬取り切りラインを日本時間で整理しました。</p>
-              </div>
-            </article>
-            <article class="card">
-              <div class="card-body">
-                <div class="card-meta"><span class="tag patch">PATCH</span><span>2026-02-18</span></div>
-                <h3>v1.9.42 バランス調整の核心</h3>
-                <p>ジャングル経験値調整で、5分前後の試合運びが大きく変わります。</p>
-              </div>
-            </article>
-            <article class="card">
-              <div class="card-body">
-                <div class="card-meta"><span class="tag mpl">MPL</span><span>2026-02-18</span></div>
-                <h3>MPL Week 3 注目はEclipse戦</h3>
-                <p>ドラフト相性と先攻後攻の差から見どころを先に押さえられます。</p>
-              </div>
-            </article>
+          <div class="jump-grid">
+            <a class="jump-card" href="news.html"><strong>NEWS</strong><span>速報を時系列で追う</span></a>
+            <a class="jump-card" href="patch-notes.html"><strong>PATCH</strong><span>メタ変化を先に掴む</span></a>
+            <a class="jump-card" href="mpl.html"><strong>MPL</strong><span>観戦ポイントを整理</span></a>
+            <a class="jump-card" href="about.html"><strong>ABOUT</strong><span>編集方針を確認する</span></a>
           </div>
         </div>
       </section>
