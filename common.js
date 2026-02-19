@@ -101,4 +101,105 @@
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
+  const links = navLinks
+    ? [...navLinks.querySelectorAll('a')].map((a) => ({ label: a.textContent.trim(), href: a.getAttribute('href') || '#' }))
+    : [];
+
+  const utilityDock = document.createElement('div');
+  utilityDock.className = 'utility-dock';
+  utilityDock.innerHTML = `
+    <button type="button" class="dock-btn" data-dock="quick" aria-label="クイック移動">⚡ クイック</button>
+    <button type="button" class="dock-btn" data-dock="random" aria-label="ランダム記事">🎲 ランダム</button>
+    <button type="button" class="dock-btn" data-dock="focus" aria-label="集中モード">🌓 集中</button>
+  `;
+  document.body.appendChild(utilityDock);
+
+  const quickPanel = document.createElement('div');
+  quickPanel.className = 'quick-panel';
+  quickPanel.innerHTML = `
+    <div class="quick-panel-inner" role="dialog" aria-modal="true" aria-label="クイックナビゲーション">
+      <div class="quick-panel-head">
+        <strong>どこへ移動する？</strong>
+        <button type="button" class="quick-close" aria-label="閉じる">✕</button>
+      </div>
+      <p class="quick-hint">ショートカット: <kbd>/</kbd> で開く / <kbd>Esc</kbd> で閉じる</p>
+      <div class="quick-links"></div>
+    </div>
+  `;
+  document.body.appendChild(quickPanel);
+
+  const quickLinks = quickPanel.querySelector('.quick-links');
+  links.forEach((item) => {
+    const a = document.createElement('a');
+    a.className = 'quick-link';
+    a.href = item.href;
+    a.textContent = item.label;
+    quickLinks?.appendChild(a);
+  });
+
+  const closeQuickPanel = () => quickPanel.classList.remove('open');
+  const openQuickPanel = () => quickPanel.classList.add('open');
+
+  quickPanel.addEventListener('click', (e) => {
+    if (e.target === quickPanel || (e.target instanceof HTMLElement && e.target.classList.contains('quick-close'))) {
+      closeQuickPanel();
+    }
+  });
+
+  const randomPool = [
+    'news.html',
+    'patch-notes.html',
+    'mpl.html',
+    'about.html',
+    'company.html',
+    'contact.html',
+  ];
+
+  const savedFocus = localStorage.getItem('mobascope_focus_mode');
+  if (savedFocus === '1') document.body.classList.add('focus-mode');
+
+  utilityDock.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+    const action = target.dataset.dock;
+
+    if (action === 'quick') openQuickPanel();
+    if (action === 'random') {
+      const next = randomPool[Math.floor(Math.random() * randomPool.length)];
+      window.location.href = next;
+    }
+    if (action === 'focus') {
+      document.body.classList.toggle('focus-mode');
+      localStorage.setItem('mobascope_focus_mode', document.body.classList.contains('focus-mode') ? '1' : '0');
+    }
+  });
+
+  const isTypingField = (el) =>
+    el instanceof HTMLElement &&
+    (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || el.isContentEditable);
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === '/' && !isTypingField(document.activeElement)) {
+      event.preventDefault();
+      openQuickPanel();
+    }
+    if (event.key === 'Escape') closeQuickPanel();
+  });
+
+  const canTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (canTilt && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const tiltTargets = document.querySelectorAll('.card, .kv-card, .kv-mini, .feature-block');
+    tiltTargets.forEach((el) => {
+      el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        el.style.transform = `perspective(900px) rotateX(${(-y * 3).toFixed(2)}deg) rotateY(${(x * 3).toFixed(2)}deg) translateY(-2px)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = '';
+      });
+    });
+  }
 })();
